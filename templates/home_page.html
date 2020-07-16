@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <title>Main page</title>
+  </head>
+  <body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="{{url_for('main_page')}}">Home Page</a>
+	</nav>
+	{% block content %}
+	<div class='jumbotron'>
+		<h2>Welcome to username check</h2>
+		<p>Let's see if your User Name is secure!</p>
+		<p>Fill out the form below with a User Name that has these restraints</p>
+		<ul>
+			<li>Must have a upper case letter somewhere</li>
+			<li>Must have a lower case letter somewhere</li>
+			<li>Must have a number at the end</li>
+		</ul>
+		<form action={{url_for('result')}}>
+			<label for='username'>UserName</label>
+			<input type="text" name="username">
+			<input type="submit" name="submit">
+		</form>
+	</div>
+	{% endblock %}
+  </body>
+</html>
